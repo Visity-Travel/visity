@@ -4,8 +4,13 @@ import '../App.css'
 
 export default class Landing extends Component {
     state = {
+        searchVal: "",
         categories: ["Food", "Nature", "Language", "City", "Museum"],
         destinations: ["Tokyo", "Milan", "Shanghai", "Miami", "Phuket", "Rome"]
+    }
+
+    handleSearchValue = (event) => {
+        this.setState({ searchVal: event.target.value })
     }
 
     render() {
@@ -18,7 +23,11 @@ export default class Landing extends Component {
                 }}>
                     <mt.Card style={{ width: "84%", display: "flex", justifyContent: "center" }}>
                         <mt.CardContent style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-                            <mt.TextField placeholder="Where do you want to go?" style={{ width: "100%" }}></mt.TextField>
+                            <mt.TextField
+                                placeholder="Where do you want to go?"
+                                style={{ width: "100%" }}
+                                onChange={this.handleSearchValue}
+                            />
                         </mt.CardContent>
                         <mt.CardActions><mt.Button>search</mt.Button></mt.CardActions>
                     </mt.Card>
@@ -26,9 +35,7 @@ export default class Landing extends Component {
 
                 <mt.Typography variant="h4" style={{ marginTop: "7%", marginBottom: "2%" }}>Catergories</mt.Typography>
                 <mt.AppBar color="transparent" position="static" >
-                    <mt.Tabs
-                        variant="scrollable"
-                    >
+                    <mt.Tabs variant="scrollable">
                         {this.state.categories.map(
                             (category) =>
                                 <mt.Card style={{ minWidth: "390px", marginRight: "2%" }}>
@@ -50,9 +57,7 @@ export default class Landing extends Component {
 
                 <mt.Typography variant="h4" style={{ marginTop: "7%", marginBottom: "2%" }}>Top Destinations</mt.Typography>
                 <mt.AppBar color="transparent" position="static" >
-                    <mt.Tabs
-                        variant="scrollable"
-                    >
+                    <mt.Tabs variant="scrollable">
                         {this.state.destinations.map(
                             (destination) =>
                                 <mt.Card style={{ minWidth: "390px" }}>
@@ -74,9 +79,7 @@ export default class Landing extends Component {
 
                 <mt.Typography variant="h4" style={{ marginTop: "7%", marginBottom: "2%" }}>Top Tours</mt.Typography>
                 <mt.AppBar color="transparent" position="static" >
-                    <mt.Tabs
-                        variant="scrollable"
-                    >
+                    <mt.Tabs variant="scrollable">
                         {this.state.categories.map(
                             (category) =>
                                 <mt.Card style={{ minWidth: "390px", marginRight: "2%" }}>
@@ -95,7 +98,6 @@ export default class Landing extends Component {
                         )}
                     </mt.Tabs>
                 </mt.AppBar>
-
             </div>
         );
     }
