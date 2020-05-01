@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as mt from '@material-ui/core'
 import '../App.css'
+import Explore from "./Explore.js"
 
 export default class Landing extends Component {
     state = {
@@ -48,7 +49,7 @@ export default class Landing extends Component {
                                         image={require("../Images/" + category + ".jpg")}
                                     />
                                     <mt.CardActions style={{ justifyContent: "center" }}>
-                                        <mt.Button style={{ width: "70%" }}>View {category} Tours</mt.Button>
+                                        <mt.Button onClick={this.handleTours} style={{ width: "70%" }}>View {category} Tours</mt.Button>
                                     </mt.CardActions>
                                 </mt.Card>
                         )}
