@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import * as mt from '@material-ui/core'
 import '../App.css'
-import Explore from "./Explore.js"
+import {
+    Link
+} from "react-router-dom";
 
 export default class Landing extends Component {
     state = {
@@ -30,7 +32,13 @@ export default class Landing extends Component {
                                 onChange={this.handleSearchValue}
                             />
                         </mt.CardContent>
-                        <mt.CardActions><mt.Button>search</mt.Button></mt.CardActions>
+                        <mt.CardActions>
+                            <mt.Button>
+                                <Link to={`/explore/search:` + this.state.searchVal}>
+                                    search
+                                </Link>
+                            </mt.Button>
+                        </mt.CardActions>
                     </mt.Card>
                 </div>
 

@@ -27,7 +27,11 @@ export default class Explore extends Component {
                                 onChange={this.handleSearchValue}
                             />
                         </mt.CardContent>
-                        <mt.CardActions><mt.Button>search</mt.Button></mt.CardActions>
+                        <mt.CardActions>
+                            <mt.Button>
+                                Search
+                            </mt.Button>
+                        </mt.CardActions>
                     </mt.Card>
                 </div>
             </div>
