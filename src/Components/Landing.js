@@ -27,7 +27,7 @@ export default class Landing extends Component {
                 <mt.Typography variant="h4" style={{ marginTop: "7%", marginBottom: "2%" }}>Catergories</mt.Typography>
                 <mt.AppBar color="transparent" position="static" >
                     <mt.Tabs
-                    variant="scrollable"
+                        variant="scrollable"
                     >
                         {this.state.categories.map(
                             (category) =>
@@ -51,11 +51,11 @@ export default class Landing extends Component {
                 <mt.Typography variant="h4" style={{ marginTop: "7%", marginBottom: "2%" }}>Top Destinations</mt.Typography>
                 <mt.AppBar color="transparent" position="static" >
                     <mt.Tabs
-                    variant="scrollable"
+                        variant="scrollable"
                     >
                         {this.state.destinations.map(
                             (destination) =>
-                                <mt.Card style={{ minWidth: "390px", marginRight: "2%" }}>
+                                <mt.Card style={{ minWidth: "390px" }}>
                                     <mt.CardHeader
                                         title={destination + " Tours"}
                                         subheader="prices between $50-$80"
@@ -75,7 +75,7 @@ export default class Landing extends Component {
                 <mt.Typography variant="h4" style={{ marginTop: "7%", marginBottom: "2%" }}>Top Tours</mt.Typography>
                 <mt.AppBar color="transparent" position="static" >
                     <mt.Tabs
-                    variant="scrollable"
+                        variant="scrollable"
                     >
                         {this.state.categories.map(
                             (category) =>
