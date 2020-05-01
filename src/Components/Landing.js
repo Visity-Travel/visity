@@ -4,7 +4,8 @@ import '../App.css'
 
 export default class Landing extends Component {
     state = {
-        categories: ["Food", "Nature", "Language", "City", "Museum"]
+        categories: ["Food", "Nature", "Language", "City", "Museum"],
+        destinations: ["Tokyo", "Milan", "Shanghai", "Miami", "Phuket", "Rome"]
     }
 
     render() {
@@ -52,19 +53,19 @@ export default class Landing extends Component {
                     <mt.Tabs
                     variant="scrollable"
                     >
-                        {this.state.categories.map(
-                            (category) =>
+                        {this.state.destinations.map(
+                            (destination) =>
                                 <mt.Card style={{ minWidth: "390px", marginRight: "2%" }}>
                                     <mt.CardHeader
-                                        title={category + " Tours"}
+                                        title={destination + " Tours"}
                                         subheader="prices between $50-$80"
                                     />
                                     <mt.CardMedia
                                         style={{ height: "10em" }}
-                                        image={require("../Images/" + category + ".jpg")}
+                                        image={require("../Images/" + destination + ".jpg")}
                                     />
                                     <mt.CardActions style={{ justifyContent: "center" }}>
-                                        <mt.Button style={{ width: "70%" }}>View {category} Tours</mt.Button>
+                                        <mt.Button style={{ width: "70%" }}>View {destination} Tours</mt.Button>
                                     </mt.CardActions>
                                 </mt.Card>
                         )}
@@ -94,7 +95,7 @@ export default class Landing extends Component {
                         )}
                     </mt.Tabs>
                 </mt.AppBar>
-                
+
             </div>
         );
     }
